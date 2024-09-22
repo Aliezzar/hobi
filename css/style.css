@@ -1,6 +1,6 @@
 :root {
     --primary: rgb(53, 91, 112);
-    --bg: #010101;
+    --bg: #111518;
 }
 
 * {
@@ -30,7 +30,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.4rem 7%;
-    background-color: rgba(1, 1, 1, 0.8);
+    background-color: rgba(17, 21, 24, 0.8);
     border-bottom: 1px solid var(--primary);
     position: fixed;
     top: 0;
@@ -113,24 +113,50 @@ body {
     width: 100%;
     height: 30%;
     bottom: 0;
-    background: linear-gradient(0deg, rgba(1, 1, 3, 1) 1%, rgba(255, 255, 255, 0) 50%);
+    background: linear-gradient(0deg, rgba(17, 21, 24, 1) 1%, rgba(255, 255, 255, 0) 50%);
 }
 
 .hero .content {
     padding: 1.4rem 7%;
     text-align: center;
 }
-
+/* H1 dengan keyframes typewriter animations */
 .hero .content h1 {
-    font-size: 5em;
+    overflow: hidden;
+    position: relative;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    font-size: 3em;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
     line-height: 1.2;
+    white-space: nowrap;
+    width: 1410px;
+    animation: typewriter 4s steps(33) 1s 1 normal both, blinkTextCursor 400ms steps(33) infinite normal;
+    -webkit-animation: typewriter 4s steps(33) 1s 1 normal both, blinkTextCursor 400ms steps(33) infinite normal;
 }
 
-.hero .content h1 span {
-    color: var(--primary);
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 1410px;
+    }
 }
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+/* H1 dengan keyframes typewriter animations selesai*/
+
 
 .hero .content p {
     font-size: 1.6rem;
